@@ -1,10 +1,7 @@
 package ie.atu.lab_1;
 
 import org.springframework.boot.context.properties.bind.Name;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping
@@ -16,5 +13,9 @@ public class RequestController {
 @GetMapping ("/Greet/{name}")
     public String greetName(@PathVariable String name) {
         return "HELLO " + name + "!";
+}
+@GetMapping("/details")
+    public String details(@RequestParam String name, @RequestParam int age) {
+        return "Name: " + name + ", age: " + age;
 }
 }
